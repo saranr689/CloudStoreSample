@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "358567350624",
+    "firebase_url": "https://cloudfirestoresample-fbc9e.firebaseio.com",
+    "project_id": "cloudfirestoresample-fbc9e",
+    "storage_bucket": "cloudfirestoresample-fbc9e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:358567350624:android:b64080e4400a1f54",
+        "android_client_info": {
+          "package_name": "com.saran.cloudstoresample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "358567350624-mlltlluaru6ch649admtatmvpkb239pc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4H_ANS63AYZ5F8bZjc_2iz9RxiZGxqFc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
