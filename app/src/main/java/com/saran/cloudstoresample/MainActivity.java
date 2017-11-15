@@ -1,7 +1,6 @@
 package com.saran.cloudstoresample;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -25,8 +24,6 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private String selectedImagePath;
     StorageReference storageRef;
     FirebaseStorage firebase_storage;
+    String profilepicUrl;
 
 
     @Override
@@ -63,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
         firestore_db = FirebaseFirestore.getInstance();
         firebase_storage = FirebaseStorage.getInstance();
-        storageRef = firebase_storage.getReference().child("Team");
+        storageRef = firebase_storage.getReference().child("Player/team1/p1");
 
 
         profile_btn.setOnClickListener(new View.OnClickListener() {
@@ -106,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
     private void uploadimageStorage() {
 
 
-        storageRef.child("images/saranr689.jpg");
+//        storageRef.getParent().child("images/saranr689.jpg");
         UploadTask uploadTask = storageRef.putFile(selectedImageUri);
         uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override
@@ -159,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
                     et_name.setText(task.getResult().getString("name") + " ");
                     et_email.setText(task.getResult().getString("email") + " ");
                     et_phnum.setText(task.getResult().getString("phonenumber") + " ");
-                    String profilepicUrl = task.getResult().getString("profilepic");
+                    profilepicUrl = task.getResult().getString("profilepic");
 
                     Picasso.with(MainActivity.this).load(profilepicUrl)
                             .placeholder(R.mipmap.ic_launcher)
@@ -176,7 +174,8 @@ public class MainActivity extends AppCompatActivity {
         user.put("name", et_name.getText().toString());
         user.put("email", et_email.getText().toString());
         user.put("phonenumber", et_phnum.getText().toString());
-        firestore_db.collection("Profile").document(id).update(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+        user.put("profilepic", profilepicUrl);
+        firestore_db.collection("GetProfile").document("saranr689@gmail.com").update(user).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
 

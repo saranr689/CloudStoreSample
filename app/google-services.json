@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "358567350624-279e773io032p2v0hptp36pg7nnkjatd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.saran.cloudstoresample",
+            "certificate_hash": "d921fc47043762968d8cd3c2c2d1dd9eebd4ac01"
+          }
+        },
+        {
           "client_id": "358567350624-mlltlluaru6ch649admtatmvpkb239pc.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "358567350624-mlltlluaru6ch649admtatmvpkb239pc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
